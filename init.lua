@@ -1,3 +1,5 @@
-require('keymappings')
 require('plugins')
+require('plugin_settings')
+require('statusline')
 require('settings')
+require('keymappings')
