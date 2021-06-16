@@ -1,11 +1,3 @@
--- nvim-treesitter
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-  },
-}
-
--- nvim-lspconfig
 vim.o.completeopt = "menuone,noselect"
 
 require'compe'.setup {
@@ -36,9 +28,3 @@ require'compe'.setup {
   };
 }
 
-require'lspconfig'.ccls.setup{}
-require'lspconfig'.tsserver.setup{}
-
--- lspsaga.nvim
-local saga = require 'lspsaga'
-saga.init_lsp_saga()

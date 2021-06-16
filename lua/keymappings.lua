@@ -23,12 +23,6 @@ vim.api.nvim_set_keymap('n', '<Leader>fb', ':Telescope buffers<CR>', {silent = t
 vim.api.nvim_set_keymap('n', '<Leader>gs', ':Git<CR>', {silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>gd', ':Gdiffsplit<CR>', {silent = true })
 
--- goyo
-vim.api.nvim_set_keymap('n', '<Leader>x', ':Goyo<CR>', {silent = true })
-
--- limelight
-vim.api.nvim_set_keymap('n', '<Leader>y', ':Limelight!!<CR>', {silent = true })
-
 -- nvim-lspconfig
 vim.cmd("nnoremap <silent> <Leader>dd <cmd>lua vim.lsp.buf.definition()<CR>")
 vim.cmd("nnoremap <silent> <Leader>dr <cmd>lua vim.lsp.buf.references()<CR>")
