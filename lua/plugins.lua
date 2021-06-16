@@ -20,8 +20,7 @@ return require('packer').startup(function()
   
   -- file managment
   use 'kyazdani42/nvim-tree.lua'
-  use {
-    'nvim-telescope/telescope.nvim',
+  use {'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
   }
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
