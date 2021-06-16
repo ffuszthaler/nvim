@@ -17,7 +17,7 @@ return require('packer').startup(function()
   use 'sirver/ultisnips'
   use 'honza/vim-snippets'
   use 'mattn/emmet-vim'
-  use 'preservim/nerdcommenter'
+  use 'b3nj5m1n/kommentary'
   
   -- file managment
   use 'kyazdani42/nvim-tree.lua'
