@@ -17,11 +17,13 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-compe'
   use 'neovim/nvim-lspconfig'
   use 'glepnir/lspsaga.nvim'
-  use 'sirver/ultisnips'
-  use 'honza/vim-snippets'
   use 'mattn/emmet-vim'
   use 'b3nj5m1n/kommentary'
-  
+
+  -- snippet support
+  use "hrsh7th/vim-vsnip"
+  use "rafamadriz/friendly-snippets"
+
   -- file managment
   use 'kyazdani42/nvim-tree.lua'
   use {'nvim-telescope/telescope.nvim',
@@ -34,6 +36,8 @@ return require('packer').startup(function()
   use 'mg979/vim-visual-multi'
   use 'tpope/vim-fugitive'
   use 'glepnir/dashboard-nvim'
+  use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
+  use 'tweekmonster/startuptime.vim'
 
   -- colorscheme
   use 'ray-x/aurora'
