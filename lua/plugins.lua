@@ -16,6 +16,7 @@ return require('packer').startup(function()
   -- auto completion
   use 'hrsh7th/nvim-compe'
   use 'neovim/nvim-lspconfig'
+  use 'kabouzeid/nvim-lspinstall'
   use 'glepnir/lspsaga.nvim'
   use 'mattn/emmet-vim'
   use 'b3nj5m1n/kommentary'
