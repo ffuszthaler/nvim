@@ -15,3 +15,4 @@ vim.o.termguicolors = true -- set term gui colors most terminals support this
 vim.cmd('set colorcolumn=80') -- line at 80 characters
 vim.o.cursorline = true -- Enable highlighting of the current line
 vim.o.updatetime = 100 -- faster completion
+vim.o.signcolumn = "yes"

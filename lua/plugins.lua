@@ -33,6 +33,7 @@ return require('packer').startup(function()
   use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
   use 'mg979/vim-visual-multi'
   use 'tpope/vim-fugitive'
+  use 'glepnir/dashboard-nvim'
 
   -- colorscheme
   use 'ray-x/aurora'
@@ -40,5 +41,5 @@ return require('packer').startup(function()
   -- statusline
   use 'kyazdani42/nvim-web-devicons'
   use {'glepnir/galaxyline.nvim', branch = 'main'}
-  use 'romgrk/barbar.nvim'
+  use 'akinsho/nvim-bufferline.lua'
 end)
