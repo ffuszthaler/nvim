@@ -32,14 +32,6 @@ return require('packer').startup(function()
   }
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 
-  -- random
-  use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
-  use 'mg979/vim-visual-multi'
-  use 'tpope/vim-fugitive'
-  use 'glepnir/dashboard-nvim'
-  use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
-  use 'tweekmonster/startuptime.vim'
-
   -- colorscheme
   use 'ray-x/aurora'
 
@@ -47,4 +39,13 @@ return require('packer').startup(function()
   use 'kyazdani42/nvim-web-devicons'
   use {'glepnir/galaxyline.nvim', branch = 'main'}
   use 'akinsho/nvim-bufferline.lua'
+
+  -- random
+  use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
+  use 'mg979/vim-visual-multi'
+  use 'tpope/vim-fugitive'
+  use 'glepnir/dashboard-nvim'
+  use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
+  use 'tweekmonster/startuptime.vim'
+  use 'numToStr/FTerm.nvim'
 end)
