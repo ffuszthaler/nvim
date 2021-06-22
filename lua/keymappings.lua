@@ -34,3 +34,16 @@ vim.cmd("nnoremap <silent> <Leader>q :Lspsaga show_line_diagnostics<CR>")
 vim.cmd("nnoremap <silent> <Leader>e :Lspsaga code_action<CR>")
 vim.cmd("nnoremap <silent> <Leader>t :Lspsaga diagnostic_jump_next<CR>")
 vim.cmd("nnoremap <silent> <Leader>z :Lspsaga diagnostic_jump_prev<CR>")
+
+-- bufferline: open and close tabs
+vim.api.nvim_set_keymap("n", "<S-t>", [[<Cmd>tabnew<CR>]], { silent = true })
+vim.api.nvim_set_keymap("n", "<S-x>", [[<Cmd>bdelete<CR>]], { silent = true })
+
+-- bufferline: move between tabs
+vim.api.nvim_set_keymap("n", "<TAB>", [[<Cmd>BufferLineCycleNext<CR>]], { silent = true })
+vim.api.nvim_set_keymap("n", "<S-TAB>", [[<Cmd>BufferLineCyclePrev<CR>]], { silent = true })
+
+-- kommentary
+vim.api.nvim_set_keymap("n", "<leader>cc", "<Plug>kommentary_line_default", {})
+--vim.api.nvim_set_keymap("n", "<leader>c", "<Plug>kommentary_motion_default", {})
+vim.api.nvim_set_keymap("v", "<leader>cc", "<Plug>kommentary_visual_default", {})

@@ -18,6 +18,7 @@ vim.g.dashboard_custom_header = {
     "                                   "
 }
 
+-- need to think of new shortcuts
 vim.g.dashboard_custom_section = {
     a = { description = {"  Find File                 SPC f f"}, command = "Telescope find_files" },
     b = { description = {"  Recents                   SPC f o"}, command = "Telescope oldfiles" },
