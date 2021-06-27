@@ -2,14 +2,18 @@ require('plugins')
 require('keymappings')
 require('settings')
 
--- Plugins
+-- plugin config
+require('compe-config') -- auto completion
+require('lspsaga-config') -- lsp user interface
+require('treesitter-config') -- syntax highlighting
+require('statusline') -- galaxyline
+require('gitsigns-config') -- git symbols
+require('nvimtree-config') -- file tree
+require('kommentary-config') -- commenting
+require('bufferline-config') -- tabline
+require('FTerm-config') -- popup terminal
+
+-- lsp config
 require('lsp-config')
-require('compe-config')
-require('lspsaga-config')
-require('treesitter-config')
-require('statusline')
-require('gitsigns-config')
-require('nvimtree-config')
-require('kommentary-config')
-require('bufferline-config')
-require('FTerm-config')
+require('lsp.js-ts-ls')
+require('lsp.cpp-ls')
