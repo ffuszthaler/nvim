@@ -24,16 +24,16 @@ vim.api.nvim_set_keymap('n', '<Leader>gs', ':Git<CR>', { silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>gd', ':Gdiffsplit<CR>', { silent = true })
 
 -- nvim-lspconfig
-vim.cmd("nnoremap <silent> <Leader>dd <cmd>lua vim.lsp.buf.definition()<CR>")
-vim.cmd("nnoremap <silent> <Leader>dr <cmd>lua vim.lsp.buf.references()<CR>")
-vim.cmd("nnoremap <silent> <Leader>di <cmd>lua vim.lsp.buf.implementation()<CR>")
-vim.cmd("nnoremap <silent> <Leader>dl <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>")
+vim.api.nvim_set_keymap('n', '<Leader>dd', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>dr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>di', '<cmd>lua vim.lsp.buf.implementation()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>dl', '<cmd>lua vim.lsp.diagnostic.set_loclist()', { noremap = true, silent = true })
 
 -- lspsaga.nvim
-vim.cmd("nnoremap <silent> <Leader>q :Lspsaga show_line_diagnostics<CR>")
-vim.cmd("nnoremap <silent> <Leader>e :Lspsaga code_action<CR>")
-vim.cmd("nnoremap <silent> <Leader>t :Lspsaga diagnostic_jump_next<CR>")
-vim.cmd("nnoremap <silent> <Leader>z :Lspsaga diagnostic_jump_prev<CR>")
+vim.api.nvim_set_keymap('n', '<Leader>q', ':Lspsaga show_line_diagnostics<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>e', ':Lspsaga code_action<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>t', ':Lspsaga diagnostic_jump_next<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>z', ':Lspsaga hover_doc<CR>', { noremap = true, silent = true })
 
 -- bufferline: open and close tabs
 vim.api.nvim_set_keymap("n", "<S-t>", [[<Cmd>tabnew<CR>]], { silent = true })

@@ -44,7 +44,6 @@ return require('packer').startup(function()
   use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
   use 'mg979/vim-visual-multi'
   use 'tpope/vim-fugitive'
-  use 'glepnir/dashboard-nvim'
   use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
   use 'tweekmonster/startuptime.vim'
   use 'numToStr/FTerm.nvim'
