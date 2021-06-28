@@ -1,11 +1,8 @@
-local function on_attach(client)
-  print('Attached to ' .. client.name)
-end
-
 require'lspconfig'.diagnosticls.setup {
-  -- on_attach = on_attach,
-  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
+  -- add filetype to add linter and/or formatter
+  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown' },
   init_options = {
+    -- add linters
     linters = {
       eslint = {
         command = 'eslint_d',
@@ -28,12 +25,14 @@ require'lspconfig'.diagnosticls.setup {
         }
       },
     },
+    -- add linter to filetype
     filetypes = {
       javascript = 'eslint',
       javascriptreact = 'eslint',
       typescript = 'eslint',
       typescriptreact = 'eslint',
     },
+    -- add formatter
     formatters = {
       eslint_d = {
         command = 'eslint_d',
@@ -45,6 +44,7 @@ require'lspconfig'.diagnosticls.setup {
         args = { '--stdin-filepath', '%filename' }
       }
     },
+    -- add formatter to filetype
     formatFiletypes = {
       css = 'prettier',
       javascript = { 'eslint_d', 'prettier' },
