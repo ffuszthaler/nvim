@@ -1,5 +1,4 @@
 vim.cmd('syntax on') -- syntax highlighting
-vim.cmd('colorscheme aurora') -- set colorscheme
 vim.cmd('filetype plugin indent on') -- filetype detection
 vim.o.number = true -- set numbered lines
 vim.o.relativenumber = true -- set relative number

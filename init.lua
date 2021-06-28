@@ -13,6 +13,7 @@ require('kommentary-config') -- commenting
 require('bufferline-config') -- tabline
 require('fterm-config') -- popup terminal
 require('colorizer-config') -- show colors
+require('colorscheme-config') -- colorscheme settings
 
 -- lsp config
 require('lsp-config')

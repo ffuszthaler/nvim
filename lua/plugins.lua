@@ -33,6 +33,7 @@ return require('packer').startup(function()
 
   -- colorscheme
   use 'ray-x/aurora'
+  use 'folke/tokyonight.nvim'
 
   -- statusline
   use 'kyazdani42/nvim-web-devicons'
