@@ -18,7 +18,6 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   use 'kabouzeid/nvim-lspinstall'
   use 'glepnir/lspsaga.nvim'
-  use 'mattn/emmet-vim'
   use 'b3nj5m1n/kommentary'
 
   -- snippet support
@@ -47,4 +46,5 @@ return require('packer').startup(function()
   use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
   use 'tweekmonster/startuptime.vim'
   use 'numToStr/FTerm.nvim'
+  use 'norcalli/nvim-colorizer.lua'
 end)
