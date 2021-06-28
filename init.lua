@@ -12,9 +12,10 @@ require('nvimtree-config') -- file tree
 require('kommentary-config') -- commenting
 require('bufferline-config') -- tabline
 require('fterm-config') -- popup terminal
-require('colorizer-config')
+require('colorizer-config') -- show colors
 
 -- lsp config
 require('lsp-config')
 require('lsp.js-ts-ls')
 require('lsp.cpp-ls')
+require('lsp.diagnostic-ls')

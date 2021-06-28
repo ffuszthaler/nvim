@@ -28,6 +28,7 @@ vim.api.nvim_set_keymap('n', '<Leader>dd', '<cmd>lua vim.lsp.buf.definition()<CR
 vim.api.nvim_set_keymap('n', '<Leader>dr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>di', '<cmd>lua vim.lsp.buf.implementation()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>dl', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>df', '<cmd>lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
 
 -- lspsaga.nvim
 vim.api.nvim_set_keymap('n', '<Leader>q', ':Lspsaga show_line_diagnostics<CR>', { noremap = true, silent = true })
