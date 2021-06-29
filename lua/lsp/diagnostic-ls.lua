@@ -1,6 +1,6 @@
 require'lspconfig'.diagnosticls.setup {
   -- add filetype to add linter and/or formatter
-  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown' },
+  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'html' },
   init_options = {
     -- add linters
     linters = {
@@ -55,6 +55,7 @@ require'lspconfig'.diagnosticls.setup {
       typescript = { 'eslint_d', 'prettier' },
       typescriptreact = { 'eslint_d', 'prettier' },
       markdown = 'prettier',
+      html = 'prettier',
     }
   }
 }
