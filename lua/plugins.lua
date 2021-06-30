@@ -48,4 +48,6 @@ return require('packer').startup(function()
   use 'tweekmonster/startuptime.vim'
   use 'numToStr/FTerm.nvim'
   use 'norcalli/nvim-colorizer.lua'
+  use 'simrat39/symbols-outline.nvim'
+  use 'folke/trouble.nvim'
 end)
