@@ -8,7 +8,8 @@ require('telescope').setup{
       "%.bmp",
       "%.tif",
       "%.tiff",
-      "%.gif"
+      "%.gif",
+      "%.mp4"
     },
   }
 }
