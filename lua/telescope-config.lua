@@ -6,10 +6,6 @@ require('telescope').setup{
       "%.jpg",
       "%.jpeg",
       "%.bmp",
-      "%.tif",
-      "%.tiff",
-      "%.gif",
-      "%.mp4"
     },
   }
 }
