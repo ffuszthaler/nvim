@@ -9,6 +9,7 @@ require('treesitter-config') -- syntax highlighting
 require('statusline') -- galaxyline
 require('gitsigns-config') -- git symbols
 require('nvimtree-config') -- file tree
+require('telescope-config') -- telescope settings
 require('kommentary-config') -- commenting
 require('bufferline-config') -- tabline
 require('fterm-config') -- popup terminal
