@@ -50,4 +50,7 @@ return require('packer').startup(function()
   use 'norcalli/nvim-colorizer.lua'
   use 'simrat39/symbols-outline.nvim'
   use 'folke/trouble.nvim'
+  use 'nacro90/numb.nvim'
+  use 'Pocco81/TrueZen.nvim'
+  use 'TimUntersberger/neogit'
 end)

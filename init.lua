@@ -14,6 +14,7 @@ require('kommentary-config') -- commenting
 require('bufferline-config') -- tabline
 require('fterm-config') -- popup terminal
 require('colorizer-config') -- show colors
+require('numb-config') -- peak lines
 require('colorscheme-config') -- colorscheme settings
 
 -- lsp config
