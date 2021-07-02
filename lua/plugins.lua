@@ -52,5 +52,4 @@ return require('packer').startup(function()
   use 'folke/trouble.nvim'
   use 'nacro90/numb.nvim'
   use 'Pocco81/TrueZen.nvim'
-  use 'TimUntersberger/neogit'
 end)
