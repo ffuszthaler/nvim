@@ -45,9 +45,9 @@ vim.api.nvim_set_keymap("n", "<S-x>", [[<Cmd>bdelete<CR>]], { silent = true })
 vim.api.nvim_set_keymap("n", "<TAB>", [[<Cmd>BufferLineCycleNext<CR>]], { silent = true })
 vim.api.nvim_set_keymap("n", "<S-TAB>", [[<Cmd>BufferLineCyclePrev<CR>]], { silent = true })
 
--- kommentary
+-- kommentary (the <C-c> exits visual-mode after uncommenting something)
 vim.api.nvim_set_keymap("n", "<leader>cc", "<Plug>kommentary_line_default", {})
-vim.api.nvim_set_keymap("v", "<leader>cc", "<Plug>kommentary_visual_default", {})
+vim.api.nvim_set_keymap("v", "<leader>cc", "<Plug>kommentary_visual_default<C-c>", {})
 
 -- FTerm
 vim.api.nvim_set_keymap('n', '<Leader>y', '<CMD>lua require("FTerm").toggle()<CR>', { noremap = true, silent = true })
