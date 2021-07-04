@@ -44,7 +44,7 @@ return require('packer').startup(function()
   use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
   use 'mg979/vim-visual-multi'
   use 'tpope/vim-fugitive'
-  use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
+  use "lukas-reineke/indent-blankline.nvim"
   use 'tweekmonster/startuptime.vim'
   use 'numToStr/FTerm.nvim'
   use 'norcalli/nvim-colorizer.lua'
