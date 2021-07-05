@@ -23,7 +23,7 @@ gl.short_line_list = {'NvimTree','vista','dbui','packer'}
 gls.left[1] = {
   RainbowRed = {
     --provider = function() return '▊ ' end,
-    provider = function() return '▎' end,
+    provider = function() return '▎ ' end,
     highlight = {colors.blue,colors.bg}
   },
 }
@@ -31,12 +31,12 @@ gls.left[2] = {
   ViMode = {
     provider = function()
       -- auto change color according the vim mode
-      local mode_color = {n = colors.red, i = colors.green,v=colors.blue,
-                          [''] = colors.blue,V=colors.blue,
+      local mode_color = {n = colors.red, i = colors.green,v = colors.blue,
+                          [''] = colors.blue,V = colors.blue,
                           c = colors.magenta,no = colors.red,s = colors.orange,
-                          S=colors.orange,[''] = colors.orange,
+                          S = colors.orange,[''] = colors.orange,
                           ic = colors.yellow,R = colors.violet,Rv = colors.violet,
-                          cv = colors.red,ce=colors.red, r = colors.cyan,
+                          cv = colors.red,ce = colors.red, r = colors.cyan,
                           rm = colors.cyan, ['r?'] = colors.cyan,
                           ['!']  = colors.red,t = colors.red}
       vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim.fn.mode()])
@@ -117,7 +117,7 @@ gls.left[11] = {
   }
 }
 
---[[gls.mid[1] = {
+gls.right[1] = {
   ShowLspClient = {
     provider = 'GetLspClient',
     condition = function ()
@@ -127,12 +127,12 @@ gls.left[11] = {
       end
       return true
     end,
-    icon = ' LSP:',
-    highlight = {colors.cyan,colors.bg,'bold'}
+    icon = ' ',
+    highlight = {colors.blue,colors.bg,}
   }
-}--]]
+}
 
-gls.right[1] = {
+gls.right[2] = {
   FileEncode = {
     provider = 'FileEncode',
     condition = condition.hide_in_width,
@@ -142,7 +142,7 @@ gls.right[1] = {
   }
 }
 
-gls.right[2] = {
+gls.right[3] = {
   FileFormat = {
     provider = 'FileFormat',
     condition = condition.hide_in_width,
@@ -152,7 +152,7 @@ gls.right[2] = {
   }
 }
 
-gls.right[3] = {
+gls.right[4] = {
   GitIcon = {
     provider = function() return '  ' end,
     condition = condition.check_git_workspace,
@@ -162,7 +162,7 @@ gls.right[3] = {
   }
 }
 
-gls.right[4] = {
+gls.right[5] = {
   GitBranch = {
     provider = 'GitBranch',
     condtion = require("galaxyline.provider_vcs").check_git_workspace,
@@ -170,7 +170,7 @@ gls.right[4] = {
   }
 }
 
-gls.right[5] = {
+gls.right[6] = {
   DiffAdd = {
     provider = 'DiffAdd',
     condition = condition.hide_in_width,
@@ -178,29 +178,28 @@ gls.right[5] = {
     highlight = {colors.green,colors.bg},
   }
 }
-gls.right[6] = {
+gls.right[7] = {
   DiffModified = {
     provider = 'DiffModified',
     condition = condition.hide_in_width,
-    icon= "   ",
+    icon = "   ",
     highlight = {colors.orange,colors.bg},
   }
 }
-gls.right[7] = {
+gls.right[8] = {
   DiffRemove = {
     provider = 'DiffRemove',
     condition = condition.hide_in_width,
-    icon= "   ",
+    icon = "   ",
     highlight = {colors.red,colors.bg},
   }
 }
 
-gls.right[8] = {
+gls.right[9] = {
   ScrollBar = {
     provider = "ScrollBar",
-    separator = " ",
-    condition = checkwidth,
-    highlight = {colors.blue, colors.purple}
+    condition = condition.checkwidth,
+    highlight = {colors.blue,colors.bg}
   }
 }
 
@@ -230,7 +229,7 @@ gls.short_line_left[2] = {
 
 gls.short_line_right[1] = {
   BufferIcon = {
-    provider= 'BufferIcon',
+    provider = 'BufferIcon',
     highlight = {colors.fg,colors.bg}
   }
 }

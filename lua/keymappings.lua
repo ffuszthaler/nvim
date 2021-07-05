@@ -24,6 +24,9 @@ vim.api.nvim_set_keymap('n', '<Leader>dr', ':lua vim.lsp.buf.references()<CR>', 
 vim.api.nvim_set_keymap('n', '<Leader>di', ':lua vim.lsp.buf.implementation()<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<Leader>dl', ':lua vim.lsp.diagnostic.set_loclist()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>df', ':lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>dx', ':lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>dn', ':lua vim.lsp.diagnostic.goto_next({popup_opts = {border}})<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>dp', ':lua vim.lsp.diagnostic.goto_prev({popup_opts = {border}})<CR>', { noremap = true, silent = true })
 
 -- telescope
 vim.api.nvim_set_keymap('n', '<Leader>f', ':Telescope find_files<CR>', { silent = true })
