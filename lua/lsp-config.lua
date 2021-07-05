@@ -11,7 +11,7 @@ end
   text = "",
   texthl = "LspDiagnosticsSignError",
   linehl = "",
-  numhl = "",
+  numhl = "LspDiagnosticsSignError",
 })
 
 vim.fn.sign_define("LspDiagnosticsSignWarning", {
@@ -19,7 +19,7 @@ vim.fn.sign_define("LspDiagnosticsSignWarning", {
   text = "",
   texthl = "LspDiagnosticsSignWarning",
   linehl = "",
-  numhl = "",
+  numhl = "LspDiagnosticsSignWarning",
 })
 
 vim.fn.sign_define("LspDiagnosticsSignInformation", {
@@ -28,7 +28,7 @@ vim.fn.sign_define("LspDiagnosticsSignInformation", {
   text = "",
   texthl = "LspDiagnosticsSignInformation",
   linehl = "",
-  numhl = "",
+  numhl = "LspDiagnosticsSignInformation",
 })
 
 vim.fn.sign_define("LspDiagnosticsSignHint", {
@@ -38,5 +38,5 @@ vim.fn.sign_define("LspDiagnosticsSignHint", {
   text  = "",
   texthl = "LspDiagnosticsSignHint",
   linehl = "",
-  numhl = "",
+  numhl = "LspDiagnosticsSignHint",
 })
