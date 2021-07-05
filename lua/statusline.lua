@@ -199,6 +199,7 @@ gls.right[9] = {
   ScrollBar = {
     provider = "ScrollBar",
     condition = condition.checkwidth,
+    separator = ' ',
     highlight = {colors.blue,colors.bg}
   }
 }
