@@ -4,7 +4,6 @@ require('settings')
 
 -- plugin config
 require('compe-config') -- auto completion
-require('lspsaga-config') -- lsp user interface
 require('treesitter-config') -- syntax highlighting
 require('statusline') -- galaxyline
 require('gitsigns-config') -- git symbols

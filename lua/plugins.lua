@@ -17,7 +17,6 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-compe'
   use 'neovim/nvim-lspconfig'
   use 'kabouzeid/nvim-lspinstall'
-  use 'glepnir/lspsaga.nvim'
   use 'b3nj5m1n/kommentary'
 
   -- snippet support
