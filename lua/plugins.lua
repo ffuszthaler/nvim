@@ -15,11 +15,18 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
 
-  -- auto completion
+  -- auto completion & formatting
   use 'hrsh7th/nvim-compe'
   use 'neovim/nvim-lspconfig'
   use 'kabouzeid/nvim-lspinstall'
   use 'b3nj5m1n/kommentary'
+
+  use {
+    'sbdchd/neoformat',
+    config = function()
+      vim.g.neoformat_run_all_formatters = true
+    end
+  }
 
 
   -- snippet support
@@ -66,6 +73,7 @@ return require('packer').startup(function()
 
   use 'simrat39/symbols-outline.nvim'
   use 'folke/trouble.nvim'
+  use 'Pocco81/TrueZen.nvim'
 
   use {
     'nacro90/numb.nvim',
@@ -76,6 +84,4 @@ return require('packer').startup(function()
       }
     end
   }
-
-  use 'Pocco81/TrueZen.nvim'
 end)

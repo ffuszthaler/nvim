@@ -18,4 +18,4 @@ require('colorscheme-config') -- colorscheme settings
 require('lsp-config')
 require('lsp.js-ts-ls')
 require('lsp.cpp-ls')
-require('lsp.diagnostic-ls')
+-- require('lsp.diagnostic-ls')
