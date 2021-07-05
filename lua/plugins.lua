@@ -9,6 +9,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute 'packadd packer.nvim'
 end
 
+-- after changing plugin config run :PackerCompile
 return require('packer').startup(function()
   -- packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -30,8 +31,8 @@ return require('packer').startup(function()
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
   use 'kyazdani42/nvim-tree.lua'
   use {'nvim-telescope/telescope.nvim',
-    requires = {{
-      'nvim-lua/popup.nvim'},
+    requires = {
+      {'nvim-lua/popup.nvim'},
       {'nvim-lua/plenary.nvim'}
     }
   }
@@ -58,7 +59,6 @@ return require('packer').startup(function()
 
   use {
     'norcalli/nvim-colorizer.lua',
-    -- event = "BufRead",
     config = function()
       require("colorizer").setup()
     end
@@ -69,7 +69,6 @@ return require('packer').startup(function()
 
   use {
     'nacro90/numb.nvim',
-    -- event = "BufRead",
     config = function()
       require("numb").setup {
         show_numbers = true, -- Enable 'number' for the window while peeking
