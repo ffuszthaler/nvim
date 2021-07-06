@@ -72,8 +72,18 @@ return require('packer').startup(function()
   }
 
   use 'simrat39/symbols-outline.nvim'
-  use 'folke/trouble.nvim'
   use 'Pocco81/TrueZen.nvim'
+
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+        mode = "lsp_document_diagnostics",
+        use_lsp_diagnostic_signs = true
+      }
+    end
+  }
 
   use {
     'nacro90/numb.nvim',
