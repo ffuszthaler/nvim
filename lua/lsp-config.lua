@@ -2,41 +2,41 @@ require("lspinstall").setup()
 
 local servers = require("lspinstall").installed_servers()
 for _, server in pairs(servers) do
-	require("lspconfig")[server].setup({})
+  require("lspconfig")[server].setup {}
 end
 
 -- icons
 vim.fn.sign_define("LspDiagnosticsSignError", {
-	-- text = "",
-	text = "",
-	texthl = "LspDiagnosticsSignError",
-	linehl = "",
-	numhl = "LspDiagnosticsSignError",
+  -- text = "",
+  text = "",
+  texthl = "LspDiagnosticsSignError",
+  linehl = "",
+  numhl = "LspDiagnosticsSignError",
 })
 
 vim.fn.sign_define("LspDiagnosticsSignWarning", {
-	-- text = "",
-	text = "",
-	texthl = "LspDiagnosticsSignWarning",
-	linehl = "",
-	numhl = "LspDiagnosticsSignWarning",
+  -- text = "",
+  text = "",
+  texthl = "LspDiagnosticsSignWarning",
+  linehl = "",
+  numhl = "LspDiagnosticsSignWarning",
 })
 
 vim.fn.sign_define("LspDiagnosticsSignInformation", {
-	-- text = "",
-	-- text = "",
-	text = "",
-	texthl = "LspDiagnosticsSignInformation",
-	linehl = "",
-	numhl = "LspDiagnosticsSignInformation",
+  -- text = "",
+  -- text = "",
+  text = "",
+  texthl = "LspDiagnosticsSignInformation",
+  linehl = "",
+  numhl = "LspDiagnosticsSignInformation",
 })
 
 vim.fn.sign_define("LspDiagnosticsSignHint", {
-	-- text = "",
-	-- text = "",
-	-- text  = "",
-	text = "",
-	texthl = "LspDiagnosticsSignHint",
-	linehl = "",
-	numhl = "LspDiagnosticsSignHint",
+  -- text = "",
+  -- text = "",
+  -- text  = "",
+  text = "",
+  texthl = "LspDiagnosticsSignHint",
+  linehl = "",
+  numhl = "LspDiagnosticsSignHint",
 })

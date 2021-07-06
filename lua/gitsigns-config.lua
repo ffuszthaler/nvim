@@ -1,48 +1,48 @@
-require("gitsigns").setup({
-	signs = {
-		add = {
+require("gitsigns").setup {
+  signs = {
+    add = {
       hl = "GitSignsAdd",
       text = "▎",
       numhl = "GitSignsAddNr",
-      linehl = "GitSignsAddLn"
+      linehl = "GitSignsAddLn",
     },
-		change = {
+    change = {
       hl = "GitSignsChange",
       text = "▎",
       numhl = "GitSignsChangeNr",
-      linehl = "GitSignsChangeLn"
+      linehl = "GitSignsChangeLn",
     },
-		delete = {
+    delete = {
       hl = "GitSignsDelete",
       text = "_",
       numhl = "GitSignsDeleteNr",
-      linehl = "GitSignsDeleteLn"
+      linehl = "GitSignsDeleteLn",
     },
-		topdelete = {
+    topdelete = {
       hl = "GitSignsDelete",
       text = "‾",
       numhl = "GitSignsDeleteNr",
-      linehl = "GitSignsDeleteLn"
+      linehl = "GitSignsDeleteLn",
     },
-		changedelete = {
+    changedelete = {
       hl = "GitSignsChange",
       text = "▎",
       numhl = "GitSignsChangeNr",
-      linehl = "GitSignsChangeLn"
+      linehl = "GitSignsChangeLn",
     },
-	},
-	numhl = false,
-	linehl = false,
-	keymaps = {
-		-- default keymap options
-		noremap = true,
-		buffer = true,
-	},
-	watch_index = {
-		interval = 1000,
-	},
-	sign_priority = 6,
-	update_debounce = 200,
-	status_formatter = nil, -- dse default
-	use_decoration_api = false,
-})
+  },
+  numhl = false,
+  linehl = false,
+  keymaps = {
+    -- default keymap options
+    noremap = true,
+    buffer = true,
+  },
+  watch_index = {
+    interval = 1000,
+  },
+  sign_priority = 6,
+  update_debounce = 200,
+  status_formatter = nil, -- dse default
+  use_decoration_api = false,
+}

@@ -26,16 +26,16 @@ vim.api.nvim_set_keymap("n", "<Leader>di", ":lua vim.lsp.buf.implementation()<CR
 -- vim.api.nvim_set_keymap('n', '<Leader>df', ':lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>dx", ":lua vim.lsp.buf.rename()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>dn",
-	":lua vim.lsp.diagnostic.goto_next({popup_opts = {border}})<CR>",
-	{ noremap = true, silent = true }
+  "n",
+  "<Leader>dn",
+  ":lua vim.lsp.diagnostic.goto_next({popup_opts = {border}})<CR>",
+  { noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>dp",
-	":lua vim.lsp.diagnostic.goto_prev({popup_opts = {border}})<CR>",
-	{ noremap = true, silent = true }
+  "n",
+  "<Leader>dp",
+  ":lua vim.lsp.diagnostic.goto_prev({popup_opts = {border}})<CR>",
+  { noremap = true, silent = true }
 )
 
 -- neoformat
@@ -64,10 +64,10 @@ vim.api.nvim_set_keymap("v", "<Leader>cc", "<Plug>kommentary_visual_default<C-c>
 -- FTerm
 vim.api.nvim_set_keymap("n", "<Leader>y", ':lua require("FTerm").toggle()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
-	"t",
-	"<Leader>y",
-	'<C-\\><C-n>:lua require("FTerm").toggle()<CR>',
-	{ noremap = true, silent = true }
+  "t",
+  "<Leader>y",
+  '<C-\\><C-n>:lua require("FTerm").toggle()<CR>',
+  { noremap = true, silent = true }
 )
 
 -- trouble
