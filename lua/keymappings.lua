@@ -15,14 +15,11 @@ vim.api.nvim_set_keymap("v", ">", ">gv", { silent = true })
 -- explorer
 vim.api.nvim_set_keymap("n", "<Leader>a", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
--- symbol-outline
-vim.api.nvim_set_keymap("n", "<Leader>s", ":SymbolsOutline<CR>", { noremap = true, silent = true })
-
 -- nvim-lspconfig
 vim.api.nvim_set_keymap("n", "<Leader>dd", ":lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>dr", ":lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>di", ":lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<Leader>dl', ':lua vim.lsp.diagnostic.set_loclist()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>dl', ':lua vim.lsp.diagnostic.set_loclist()<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<Leader>df', ':lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>dx", ":lua vim.lsp.buf.rename()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
@@ -69,6 +66,3 @@ vim.api.nvim_set_keymap(
   '<C-\\><C-n>:lua require("FTerm").toggle()<CR>',
   { noremap = true, silent = true }
 )
-
--- trouble
-vim.api.nvim_set_keymap("n", "<Leader>x", ":TroubleToggle<CR>", { noremap = true, silent = true })

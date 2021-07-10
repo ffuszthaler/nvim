@@ -63,26 +63,4 @@ return require("packer").startup(function()
       require("colorizer").setup()
     end,
   }
-
-  use "simrat39/symbols-outline.nvim"
-  use "Pocco81/TrueZen.nvim"
-  use {
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("trouble").setup {
-        mode = "lsp_document_diagnostics",
-        use_lsp_diagnostic_signs = true,
-      }
-    end,
-  }
-  use {
-    "nacro90/numb.nvim",
-    config = function()
-      require("numb").setup {
-        show_numbers = true, -- Enable 'number' for the window while peeking
-        show_cursorline = true, -- Enable 'cursorline' for the window while peeking
-      }
-    end,
-  }
 end)
