@@ -18,6 +18,7 @@ return require("packer").startup(function()
   use "hrsh7th/nvim-compe"
   use "neovim/nvim-lspconfig"
   use "kabouzeid/nvim-lspinstall"
+  use "ray-x/lsp_signature.nvim"
   use "b3nj5m1n/kommentary"
   use {
     "sbdchd/neoformat",
