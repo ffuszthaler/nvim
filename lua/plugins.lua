@@ -14,6 +14,10 @@ return require("packer").startup(function()
   -- packer can manage itself
   use "wbthomason/packer.nvim"
 
+  -- required  by other plugins
+  use "nvim-lua/popup.nvim"
+  use "nvim-lua/plenary.nvim"
+
   -- auto completion & formatting
   use "hrsh7th/nvim-compe"
   use "neovim/nvim-lspconfig"
@@ -34,13 +38,7 @@ return require("packer").startup(function()
   -- file managment
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
   use "kyazdani42/nvim-tree.lua"
-  use {
-    "nvim-telescope/telescope.nvim",
-    requires = {
-      { "nvim-lua/popup.nvim" },
-      { "nvim-lua/plenary.nvim" },
-    },
-  }
+  use "nvim-telescope/telescope.nvim"
 
   -- colorscheme
   use "ray-x/aurora"
@@ -48,11 +46,11 @@ return require("packer").startup(function()
 
   -- statusline
   use "kyazdani42/nvim-web-devicons"
-  use { "glepnir/galaxyline.nvim", branch = "main" }
+  use "glepnir/galaxyline.nvim"
   use "akinsho/nvim-bufferline.lua"
 
   -- random
-  use { "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } }
+  use "lewis6991/gitsigns.nvim"
   use "mg979/vim-visual-multi"
   use "tpope/vim-fugitive"
   use "lukas-reineke/indent-blankline.nvim"
