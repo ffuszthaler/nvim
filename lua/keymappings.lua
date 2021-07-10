@@ -16,6 +16,7 @@ vim.api.nvim_set_keymap("v", ">", ">gv", { silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>a", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 -- nvim-lspconfig
+vim.api.nvim_set_keymap("n", "<Leader>s", ":lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>dd", ":lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>dr", ":lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>di", ":lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
