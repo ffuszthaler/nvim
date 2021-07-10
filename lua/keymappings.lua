@@ -19,7 +19,12 @@ vim.api.nvim_set_keymap("n", "<Leader>a", ":NvimTreeToggle<CR>", { noremap = tru
 vim.api.nvim_set_keymap("n", "<Leader>dd", ":lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>dr", ":lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>di", ":lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>dl', ':lua vim.lsp.diagnostic.set_loclist()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+  "n",
+  "<Leader>dl",
+  ":lua vim.lsp.diagnostic.set_loclist()<CR>",
+  { noremap = true, silent = true }
+)
 -- vim.api.nvim_set_keymap('n', '<Leader>df', ':lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>dx", ":lua vim.lsp.buf.rename()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
