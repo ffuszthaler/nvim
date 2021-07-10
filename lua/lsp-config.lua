@@ -22,21 +22,23 @@ vim.fn.sign_define("LspDiagnosticsSignWarning", {
   numhl = "LspDiagnosticsSignWarning",
 })
 
-vim.fn.sign_define("LspDiagnosticsSignInformation", {
-  -- text = "",
-  -- text = "",
-  text = "",
-  texthl = "LspDiagnosticsSignInformation",
-  linehl = "",
-  numhl = "LspDiagnosticsSignInformation",
-})
-
 vim.fn.sign_define("LspDiagnosticsSignHint", {
   -- text = "",
   -- text = "",
   -- text  = "",
-  text = "",
+  -- text = "",
+  text = "",
   texthl = "LspDiagnosticsSignHint",
   linehl = "",
   numhl = "LspDiagnosticsSignHint",
+})
+
+vim.fn.sign_define("LspDiagnosticsSignInformation", {
+  -- text = "",
+  -- text = "",
+  -- text = "",
+  text = "",
+  texthl = "LspDiagnosticsSignInformation",
+  linehl = "",
+  numhl = "LspDiagnosticsSignInformation",
 })
