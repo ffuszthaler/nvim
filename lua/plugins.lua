@@ -111,7 +111,7 @@ return require("packer").startup(function(use)
     end,
     event = "BufRead",
   }
-  use "mg979/vim-visual-multi"
+  use { "mg979/vim-visual-multi", event = "BufRead" }
   use "tpope/vim-fugitive"
   use "tweekmonster/startuptime.vim"
   use {

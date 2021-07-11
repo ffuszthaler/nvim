@@ -48,6 +48,7 @@ vim.api.nvim_set_keymap("n", "<Leader>df", ":Neoformat<CR>", { noremap = true, s
 vim.api.nvim_set_keymap("n", "<Leader>f", ":Telescope find_files<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>q", ":Telescope lsp_document_diagnostics<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>w", ":Telescope lsp_code_actions<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>e", ":Telescope keymaps<CR>", { silent = true })
 
 -- fugitive
 vim.api.nvim_set_keymap("n", "<Leader>g", ":Gdiffsplit<CR>", { silent = true })
