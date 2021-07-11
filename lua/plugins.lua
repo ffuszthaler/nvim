@@ -34,43 +34,93 @@ return require("packer").startup(function(use)
   use "nvim-lua/plenary.nvim"
 
   -- auto completion & formatting
-  use "hrsh7th/nvim-compe"
+  use {
+    "hrsh7th/nvim-compe",
+    config = function()
+      require "compe-config"
+    end,
+    event = "InsertEnter",
+  }
   use "neovim/nvim-lspconfig"
   use "kabouzeid/nvim-lspinstall"
   use "ray-x/lsp_signature.nvim"
-  use "b3nj5m1n/kommentary"
+  use {
+    "b3nj5m1n/kommentary",
+    config = function()
+      require "kommentary-config"
+    end,
+    event = "BufRead",
+  }
   use {
     "sbdchd/neoformat",
     config = function()
       vim.g.neoformat_run_all_formatters = true
     end,
+    event = "BufRead",
   }
 
   -- snippet support
-  use "hrsh7th/vim-vsnip"
-  use "rafamadriz/friendly-snippets"
+  use { "hrsh7th/vim-vsnip", event = "InsertEnter" }
+  use { "rafamadriz/friendly-snippets", event = "InsertEnter" }
 
   -- file managment
-  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+    config = function()
+      require "treesitter-config"
+    end,
+    event = "BufRead",
+  }
   use "kyazdani42/nvim-tree.lua"
-  use "nvim-telescope/telescope.nvim"
+  use {
+    "nvim-telescope/telescope.nvim",
+    config = function()
+      require "telescope-config"
+    end,
+    event = "BufWinEnter",
+  }
 
-  -- colorscheme
+  -- ui
+  use "kyazdani42/nvim-web-devicons"
+  use { "lukas-reineke/indent-blankline.nvim", event = "BufRead" }
+  use {
+    "glepnir/galaxyline.nvim",
+    config = function()
+      require "statusline"
+    end,
+    event = "BufWinEnter",
+  }
+  use {
+    "akinsho/nvim-bufferline.lua",
+    config = function()
+      require "bufferline-config"
+    end,
+    event = "BufWinEnter",
+  }
+
+  -- colorschemes
   use "ray-x/aurora"
   use "folke/tokyonight.nvim"
 
-  -- statusline
-  use "kyazdani42/nvim-web-devicons"
-  use "glepnir/galaxyline.nvim"
-  use "akinsho/nvim-bufferline.lua"
-
   -- random
-  use "lewis6991/gitsigns.nvim"
+  use {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require "gitsigns-config"
+    end,
+    event = "BufRead",
+  }
   use "mg979/vim-visual-multi"
   use "tpope/vim-fugitive"
-  use "lukas-reineke/indent-blankline.nvim"
   use "tweekmonster/startuptime.vim"
-  use "numToStr/FTerm.nvim"
+  use {
+    "numToStr/FTerm.nvim",
+    config = function()
+      require "fterm-config"
+    end,
+    event = "BufWinEnter",
+  }
   use {
     "norcalli/nvim-colorizer.lua",
     config = function()
