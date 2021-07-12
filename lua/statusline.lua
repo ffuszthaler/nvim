@@ -30,6 +30,7 @@ gls.left[1] = {
   },
 }
 
+-- for  and  to work press ctrl-v (or ctrl-s) twice in insert mode
 gls.left[2] = {
   ViMode = {
     provider = function()
@@ -38,13 +39,13 @@ gls.left[2] = {
         n = colors.red,
         i = colors.green,
         v = colors.blue,
-        [""] = colors.blue,
+        [''] = colors.blue,
         V = colors.blue,
         c = colors.magenta,
         no = colors.red,
         s = colors.orange,
         S = colors.orange,
-        [""] = colors.orange,
+        [''] = colors.orange,
         ic = colors.yellow,
         R = colors.violet,
         Rv = colors.violet,
