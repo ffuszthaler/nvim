@@ -52,9 +52,9 @@ return require("packer").startup(function(use)
     event = "BufRead",
   }
   use {
-    "sbdchd/neoformat",
+    "mhartington/formatter.nvim",
     config = function()
-      vim.g.neoformat_run_all_formatters = true
+      require "formatter-config"
     end,
     event = "BufRead",
   }
