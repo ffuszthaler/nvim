@@ -87,7 +87,7 @@ return require("packer").startup(function(use)
   use {
     "glepnir/galaxyline.nvim",
     config = function()
-      require "statusline"
+      require "statusline-config"
     end,
     event = "BufWinEnter",
   }
@@ -115,9 +115,9 @@ return require("packer").startup(function(use)
   use "tpope/vim-fugitive"
   use "tweekmonster/startuptime.vim"
   use {
-    "numToStr/FTerm.nvim",
+    "akinsho/nvim-toggleterm.lua",
     config = function()
-      require "fterm-config"
+      require "terminal-config"
     end,
     event = "BufWinEnter",
   }

@@ -64,12 +64,3 @@ vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { silent = t
 -- kommentary (the <C-c> exits visual-mode after uncommenting something)
 vim.api.nvim_set_keymap("n", "<Leader>cc", "<Plug>kommentary_line_default", {})
 vim.api.nvim_set_keymap("v", "<Leader>cc", "<Plug>kommentary_visual_default<C-c>", {})
-
--- FTerm
-vim.api.nvim_set_keymap("n", "<Leader>y", ':lua require("FTerm").toggle()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap(
-  "t",
-  "<Leader>y",
-  '<C-\\><C-n>:lua require("FTerm").toggle()<CR>',
-  { noremap = true, silent = true }
-)
