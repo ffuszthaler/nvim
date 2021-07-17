@@ -8,6 +8,12 @@ vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { silent = true })
 vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { silent = true })
 vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { silent = true })
 
+-- change split size
+vim.api.nvim_set_keymap("n", "<S-h>", ":vertical resize +1<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<S-j>", ":resize -1<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<S-k>", ":resize +1<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<S-l>", ":vertical resize -1<CR>", { silent = true })
+
 -- better indenting
 vim.api.nvim_set_keymap("v", "<", "<gv", { silent = true })
 vim.api.nvim_set_keymap("v", ">", ">gv", { silent = true })
