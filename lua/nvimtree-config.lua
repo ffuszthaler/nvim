@@ -1,2 +1,6 @@
-vim.g.nvim_tree_auto_close = 1
-vim.g.nvim_tree_side = "left"
+require("nvim-tree").setup {
+  auto_close = true,
+  view = {
+    side = "left",
+  },
+}
