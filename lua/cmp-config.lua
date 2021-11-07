@@ -4,7 +4,6 @@ local cmp = require "cmp"
 local luasnip = require "luasnip"
 
 require("luasnip.loaders.from_vscode").lazy_load()
-vim.api.nvim_command "hi LuasnipChoiceNodePassive cterm=italic"
 
 cmp.setup {
   snippet = {
