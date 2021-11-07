@@ -5,6 +5,7 @@ require "settings"
 -- plugin config
 require "nvimtree-config"
 require "colorscheme-config"
+require "cmp-config"
 
 -- lsp config
 require "lsp-config"
