@@ -44,10 +44,11 @@ return require("packer").startup(function(use)
   }
 
   -- snippets
-  use "L3MON4D3/luasnip"
+  use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
 
   use "neovim/nvim-lspconfig"
+  use "williamboman/nvim-lsp-installer"
   use "kabouzeid/nvim-lspinstall"
   use "ray-x/lsp_signature.nvim"
   use {
