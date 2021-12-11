@@ -2,6 +2,7 @@ vim.o.completeopt = "menuone,noselect"
 
 local cmp = require "cmp"
 local luasnip = require "luasnip"
+local lspkind = require'lspkind'
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -44,8 +45,21 @@ cmp.setup {
   sources = {
     { name = "nvim_lsp" },
     { name = "luasnip" },
-    { name = "buffer" },
-    { name = "path" },
     { name = "nvim_lua" },
+    { name = "path" },
+    { name = "buffer", keyword_length = 4 },
+  },
+  formatting = {
+    format = lspkind.cmp_format({
+      with_text = false,
+      menu = {
+        nvim_lsp = "[LSP]",
+        ultisnips = "[LS]",
+        nvim_lua = "[Lua]",
+        path = "[Path]",
+        buffer = "[Buffer]",
+        emoji = "[Emoji]",
+      },
+    }),
   },
 }

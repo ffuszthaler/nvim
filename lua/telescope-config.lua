@@ -9,7 +9,7 @@ require("telescope").setup {
     },
     prompt_prefix = "❯ ",
     selection_caret = "❯ ",
-    selection_strategy = "reset",
+    selection_strategy = "eset",
     sorting_strategy = "ascending",
     scroll_strategy = "cycle",
     color_devicons = true,

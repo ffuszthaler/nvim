@@ -1,81 +1,71 @@
--- bootstrapping
-local execute = vim.api.nvim_command
 local fn = vim.fn
-
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system { "git", "clone", "https://github.com/wbthomason/packer.nvim", install_path }
-  execute "packadd packer.nvim"
+  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
-local packer_ok, packer = pcall(require, "packer")
-if not packer_ok then
-  return
-end
-
-packer.init {
-  -- package_root = require("packer.util").join_paths(vim.fn.stdpath "data", "lvim", "pack"),
-  git = { clone_timeout = 300 },
-  display = {
-    open_fn = function()
-      return require("packer.util").float { border = "single" }
-    end,
-  },
-}
-
--- after changing plugin config run :PackerCompile
-return require("packer").startup(function(use)
+return require('packer').startup(function(use)
   -- packer can manage itself
   use "wbthomason/packer.nvim"
 
-  -- required  by other plugins
+  -- required by many other plugins
   use "nvim-lua/popup.nvim"
   use "nvim-lua/plenary.nvim"
 
-  -- auto completion & formatting
-  use {
-    "hrsh7th/nvim-cmp",
-    "saadparwaiz1/cmp_luasnip",
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-nvim-lua",
-  }
+  -- auto-completion engine
+  use { "onsails/lspkind-nvim", event = "BufEnter" }
+  use { "hrsh7th/nvim-cmp", after = "lspkind-nvim", config = [[require('cmp-config')]] }
+
+  -- nvim-cmp completion sources
+  use { "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" }
+
+  -- nvim-lsp configuration (it relies on cmp-nvim-lsp, so it should be loaded after cmp-nvim-lsp).
+  use { "neovim/nvim-lspconfig", after = "cmp-nvim-lsp", config = [[require('lsp-config')]] }
+
+  use { "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" }
+  use { "hrsh7th/cmp-path", after = "nvim-cmp" }
+  use { "hrsh7th/cmp-buffer", after = "nvim-cmp" }
+  use { "saadparwaiz1/cmp_luasnip", after = { 'nvim-cmp', 'LuaSnip' }}
 
   -- snippets
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
 
-  use "neovim/nvim-lspconfig"
+  -- lsp utilities
   use "williamboman/nvim-lsp-installer"
-  use "kabouzeid/nvim-lspinstall"
   use "ray-x/lsp_signature.nvim"
-  use {
-    "b3nj5m1n/kommentary",
-    config = function()
-      require "kommentary-config"
-    end,
-    event = "BufRead",
-  }
-  use {
-    "mhartington/formatter.nvim",
-    config = function()
-      require "formatter-config"
-    end,
-    event = "BufRead",
-  }
 
-  -- file managment
+  -- colorscheme
+  use "overcache/NeoSolarized"
+
+  -- treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
     config = function()
       require "treesitter-config"
     end,
-    event = "BufRead",
+    event = "BufEnter",
   }
-  use "kyazdani42/nvim-tree.lua"
+
+  -- better commenting
+  use {
+    "b3nj5m1n/kommentary",
+    config = function()
+      require "kommentary-config"
+    end,
+    event = "VimEnter",
+  }
+
+  -- file management
+  use {
+    "kyazdani42/nvim-tree.lua",
+    config = function()
+      require "nvim-tree-config"
+    end,
+    event = "BufWinEnter",
+  }
   use {
     "nvim-telescope/telescope.nvim",
     config = function()
@@ -84,7 +74,7 @@ return require("packer").startup(function(use)
     event = "BufWinEnter",
   }
 
-  -- ui
+  -- ui improvements
   use "kyazdani42/nvim-web-devicons"
   use { "lukas-reineke/indent-blankline.nvim", event = "BufRead" }
   use {
@@ -102,11 +92,7 @@ return require("packer").startup(function(use)
     event = "BufWinEnter",
   }
 
-  -- colorschemes
-  use "ray-x/aurora"
-  use "folke/tokyonight.nvim"
-
-  -- random
+  -- random features
   use {
     "lewis6991/gitsigns.nvim",
     config = function()
@@ -122,12 +108,19 @@ return require("packer").startup(function(use)
     config = function()
       require "terminal-config"
     end,
-    event = "BufWinEnter",
+    event = "BufRead",
   }
   use {
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup()
     end,
+    event = "BufRead",
   }
+
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)

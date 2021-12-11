@@ -66,7 +66,3 @@ vim.api.nvim_set_keymap("n", "<S-x>", ":bdelete<CR>", { silent = true })
 -- bufferline: move between tabs
 vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { silent = true })
-
--- kommentary (the <C-c> exits visual-mode after uncommenting something)
-vim.api.nvim_set_keymap("n", "<Leader>cc", "<Plug>kommentary_line_default", {})
-vim.api.nvim_set_keymap("v", "<Leader>cc", "<Plug>kommentary_visual_default<C-c>", {})

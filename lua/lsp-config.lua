@@ -1,81 +1,37 @@
-function OnAttach(client)
-  -- icons for completion list items
-  local protocol = require "vim.lsp.protocol"
-
-  protocol.CompletionItemKind = {
-    "", -- Text          = 1;
-    "", -- Method        = 2;
-    "ƒ", -- Function      = 3;
-    "", -- Constructor   = 4;
-    "", -- Field         = 5;
-    "", -- Variable      = 6;
-    "", -- Class         = 7;
-    "ﰮ", -- Interface     = 8;
-    "", -- Module        = 9;
-    "", -- Property      = 10;
-    "", -- Unit          = 11;
-    "", -- Value         = 12;
-    "了", -- Enum         = 13;
-    "", -- Keyword       = 14;
-    "﬌", -- Snippet       = 15;
-    "", -- Color         = 16;
-    "", -- File          = 17;
-    "", -- Reference     = 18;
-    "", -- Folder        = 19;
-    "", -- EnumMember    = 20;
-    "", -- Constant      = 21;
-    "", -- Struct        = 22;
-    "ﯓ", -- Event         = 23;
-    "", -- Operator      = 24;
-    "", -- TypeParameter = 25;
-  }
+function on_attach(client)
+  -- formatting
+  if client.name == 'tsserver' then
+    client.resolved_capabilities.document_formatting = false
+  end
 
   require("lsp_signature").on_attach()
 end
 
-require("lspinstall").setup()
+-- Set up completion using nvim_cmp with LSP source
+local capabilities = require('cmp_nvim_lsp').update_capabilities(
+  vim.lsp.protocol.make_client_capabilities()
+)
 
-local servers = require("lspinstall").installed_servers()
-for _, server in pairs(servers) do
-  require("lspconfig")[server].setup {
-    on_attach = OnAttach,
-  }
-end
+-- js & ts
+require("lspconfig").tsserver.setup {
+  on_attach = on_attach,
+  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx" },
+  capabilities = capabilities,
+}
 
--- icons
-vim.fn.sign_define("LspDiagnosticsSignError", {
-  -- text = "",
-  text = "",
-  texthl = "LspDiagnosticsSignError",
-  linehl = "",
-  numhl = "LspDiagnosticsSignError",
-})
+local lsp_installer = require("nvim-lsp-installer")
 
-vim.fn.sign_define("LspDiagnosticsSignWarning", {
-  -- text = "",
-  text = "",
-  texthl = "LspDiagnosticsSignWarning",
-  linehl = "",
-  numhl = "LspDiagnosticsSignWarning",
-})
+-- Register a handler that will be called for all installed servers.
+-- Alternatively, you may also register handlers on specific server instances instead (see example below).
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
 
-vim.fn.sign_define("LspDiagnosticsSignHint", {
-  -- text = "",
-  -- text = "",
-  -- text  = "",
-  -- text = "",
-  text = "",
-  texthl = "LspDiagnosticsSignHint",
-  linehl = "",
-  numhl = "LspDiagnosticsSignHint",
-})
+    -- (optional) Customize the options passed to the server
+    -- if server.name == "tsserver" then
+    --     opts.root_dir = function() ... end
+    -- end
 
-vim.fn.sign_define("LspDiagnosticsSignInformation", {
-  -- text = "",
-  -- text = "",
-  -- text = "",
-  text = "",
-  texthl = "LspDiagnosticsSignInformation",
-  linehl = "",
-  numhl = "LspDiagnosticsSignInformation",
-})
+    -- This setup() function is exactly the same as lspconfig's setup function.
+    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+    server:setup(opts)
+end)
