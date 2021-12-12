@@ -47,9 +47,6 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true }
 )
 
--- neoformat
-vim.api.nvim_set_keymap("n", "<Leader>df", ":Format<CR>", { noremap = true, silent = true })
-
 -- telescope
 vim.api.nvim_set_keymap("n", "<Leader>f", ":Telescope find_files<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>q", ":Telescope lsp_document_diagnostics<CR>", { silent = true })

@@ -94,6 +94,13 @@ return require('packer').startup(function(use)
 
   -- random features
   use {
+    "windwp/nvim-autopairs",
+    config = function()
+      require('nvim-autopairs').setup{}
+    end,
+    event = "BufWinEnter",
+  }
+  use {
     "lewis6991/gitsigns.nvim",
     config = function()
       require "gitsigns-config"
