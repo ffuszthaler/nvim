@@ -32,7 +32,7 @@ return require('packer').startup(function(use)
   use "rafamadriz/friendly-snippets"
 
   -- colorscheme
-  use { "overcache/NeoSolarized", config = "vim.cmd('colorscheme NeoSolarized')" }
+  use "overcache/NeoSolarized"
 
   -- treesitter
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = "require('treesitter-config')", event = "BufWinEnter" }

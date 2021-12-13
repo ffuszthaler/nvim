@@ -2,7 +2,7 @@ vim.o.completeopt = "menuone,noselect"
 
 local cmp = require "cmp"
 local luasnip = require "luasnip"
-local lspkind = require'lspkind'
+local lspkind = require "lspkind"
 
 -- (required by auto-pairs) If you want insert `(` after select function or method item
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
