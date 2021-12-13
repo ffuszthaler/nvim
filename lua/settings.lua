@@ -18,5 +18,4 @@ vim.o.signcolumn = "yes" -- always show signcolumn
 vim.o.scrolloff = 10 -- add a 10 line scroll offset
 vim.o.mouse = "a" -- enable mouse in neovim
 vim.o.hidden = true -- required to keep and open multiple buffers
-vim.cmd [[colorscheme NeoSolarized]]
 vim.cmd [[hi Normal guibg=NONE ctermbg=NONE]]

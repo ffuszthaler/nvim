@@ -13,117 +13,51 @@ return require('packer').startup(function(use)
   use "nvim-lua/popup.nvim"
   use "nvim-lua/plenary.nvim"
 
-  -- auto-completion engine
+  -- lsp & auto completion
   use { "onsails/lspkind-nvim", event = "BufEnter" }
-  use { "hrsh7th/nvim-cmp", after = "lspkind-nvim", config = [[require('cmp-config')]] }
-
-  -- nvim-cmp completion sources
+  use { "hrsh7th/nvim-cmp", after = "lspkind-nvim", config = "require('cmp-config')" }
   use { "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" }
-
-  -- nvim-lsp configuration (it relies on cmp-nvim-lsp, so it should be loaded after cmp-nvim-lsp).
-  use { "neovim/nvim-lspconfig", after = "cmp-nvim-lsp", config = [[require('lsp-config')]] }
-
+  use { "neovim/nvim-lspconfig", after = "cmp-nvim-lsp", config = "require('lsp-config')" }
   use { "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" }
   use { "hrsh7th/cmp-path", after = "nvim-cmp" }
   use { "hrsh7th/cmp-buffer", after = "nvim-cmp" }
   use { "saadparwaiz1/cmp_luasnip", after = { 'nvim-cmp', 'LuaSnip' }}
 
-  -- snippets
-  use "L3MON4D3/LuaSnip"
-  use "rafamadriz/friendly-snippets"
-
   -- lsp utilities
   use "williamboman/nvim-lsp-installer"
   use "ray-x/lsp_signature.nvim"
 
+  -- snippets
+  use "L3MON4D3/LuaSnip"
+  use "rafamadriz/friendly-snippets"
+
   -- colorscheme
-  use "overcache/NeoSolarized"
+  use { "overcache/NeoSolarized", config = "vim.cmd('colorscheme NeoSolarized')" }
 
   -- treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-    config = function()
-      require "treesitter-config"
-    end,
-    event = "BufEnter",
-  }
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = "require('treesitter-config')", event = "BufWinEnter" }
 
   -- better commenting
-  use {
-    "b3nj5m1n/kommentary",
-    config = function()
-      require "kommentary-config"
-    end,
-    event = "VimEnter",
-  }
+  use { "b3nj5m1n/kommentary", config = "require ('kommentary-config')", event = "VimEnter" }
 
   -- file management
-  use {
-    "kyazdani42/nvim-tree.lua",
-    config = function()
-      require "nvim-tree-config"
-    end,
-    event = "BufWinEnter",
-  }
-  use {
-    "nvim-telescope/telescope.nvim",
-    config = function()
-      require "telescope-config"
-    end,
-    event = "BufWinEnter",
-  }
+  use { "kyazdani42/nvim-tree.lua", config = "require('nvim-tree-config')", event = "BufWinEnter" }
+  use { "nvim-telescope/telescope.nvim", config = "require('telescope-config')", event = "BufWinEnter" }
 
   -- ui improvements
   use "kyazdani42/nvim-web-devicons"
   use { "lukas-reineke/indent-blankline.nvim", event = "BufRead" }
-  use {
-    "glepnir/galaxyline.nvim",
-    config = function()
-      require "statusline-config"
-    end,
-    event = "BufWinEnter",
-  }
-  use {
-    "akinsho/nvim-bufferline.lua",
-    config = function()
-      require "bufferline-config"
-    end,
-    event = "BufWinEnter",
-  }
+  use { "glepnir/galaxyline.nvim", config = "require('statusline-config')", event = "BufWinEnter" }
+  use { "akinsho/nvim-bufferline.lua", config = "require('bufferline-config')", event = "BufWinEnter" }
 
   -- random features
-  use {
-    "windwp/nvim-autopairs",
-    config = function()
-      require('nvim-autopairs').setup{}
-    end,
-    event = "BufWinEnter",
-  }
-  use {
-    "lewis6991/gitsigns.nvim",
-    config = function()
-      require "gitsigns-config"
-    end,
-    event = "BufRead",
-  }
+  use { "windwp/nvim-autopairs", config = "require('nvim-autopairs').setup{}", event = "BufWinEnter" }
+  use { "lewis6991/gitsigns.nvim", config = "require('gitsigns-config')", event = "BufRead" }
   use { "mg979/vim-visual-multi", event = "BufRead" }
   use "tpope/vim-fugitive"
   use "tweekmonster/startuptime.vim"
-  use {
-    "akinsho/nvim-toggleterm.lua",
-    config = function()
-      require "terminal-config"
-    end,
-    event = "BufRead",
-  }
-  use {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup()
-    end,
-    event = "BufRead",
-  }
+  use { "akinsho/nvim-toggleterm.lua", config = "require('terminal-config')", event = "BufRead" }
+  use { "norcalli/nvim-colorizer.lua", config = "require('colorizer').setup()", event = "BufRead" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
