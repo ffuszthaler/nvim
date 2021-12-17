@@ -22,11 +22,11 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
 )
 
 -- js & ts
-require("lspconfig").tsserver.setup {
-  on_attach = on_attach,
-  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx" },
-  capabilities = capabilities,
-}
+-- require("lspconfig").tsserver.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+-- }
 
 local lsp_installer = require("nvim-lsp-installer")
 
