@@ -11,10 +11,15 @@ cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex 
 -- add a lisp filetype (wrap my-function), FYI: Hardcoded = { "clojure", "clojurescript", "fennel", "janet" }
 cmp_autopairs.lisp[#cmp_autopairs.lisp+1] = "racket"
 
+-- can't get this to work
 -- require("luasnip/loaders/from_vscode").lazy_load()
 
+-- I dont know how to lazyload snippets other than "this"
+-- require("luasnip/loaders/from_vscode").load({ include = { "javascript" } })
+require("luasnip/loaders/from_vscode").load()
+
 -- this seems to be required to work on windows?
-require("luasnip/loaders/from_vscode").load({ paths = { "~/AppData/Local/nvim-data/site/pack/packer/start/friendly-snippets" } })
+-- require("luasnip/loaders/from_vscode").load({ paths = { "~/AppData/Local/nvim-data/site/pack/packer/start/friendly-snippets" } })
 
 cmp.setup {
   snippet = {
