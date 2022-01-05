@@ -57,8 +57,8 @@ return packer.startup(function(use)
   -- colorscheme
   use "overcache/NeoSolarized"
 
-  -- treesitter
-  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = "require('treesitter-config')", event = "BufWinEnter" }
+  -- treesitter - NOT WORKING: (https://github.com/nvim-treesitter/nvim-treesitter/issues/2152)
+  -- use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = "require('treesitter-config')", event = "BufWinEnter" }
 
   -- better commenting
   use { "b3nj5m1n/kommentary", config = "require ('kommentary-config')", event = "VimEnter" }
