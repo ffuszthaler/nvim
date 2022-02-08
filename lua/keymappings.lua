@@ -18,6 +18,10 @@ vim.api.nvim_set_keymap("n", "<S-l>", ":vertical resize -1<CR>", { silent = true
 vim.api.nvim_set_keymap("v", "<", "<gv", { silent = true })
 vim.api.nvim_set_keymap("v", ">", ">gv", { silent = true })
 
+-- move lines
+vim.api.nvim_set_keymap('v', '<A-k>', ":m '<-2<CR>gv=gv", { noremap=true })
+vim.api.nvim_set_keymap('v', '<A-j>', ":m '>+1<CR>gv=gv", { noremap=true })
+
 -- explorer
 vim.api.nvim_set_keymap("n", "<Leader>a", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
