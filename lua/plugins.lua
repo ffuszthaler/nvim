@@ -45,6 +45,7 @@ return packer.startup(function(use)
   use { "hrsh7th/cmp-path", after = "nvim-cmp" }
   use { "hrsh7th/cmp-buffer", after = "nvim-cmp" }
   use { "saadparwaiz1/cmp_luasnip", after = { 'nvim-cmp', 'LuaSnip' }}
+  -- use { "jose-elias-alvarez/null-ls.nvim", config = "require('null-ls-config')", event = "BufEnter"}
 
   -- lsp utilities
   use "williamboman/nvim-lsp-installer"
