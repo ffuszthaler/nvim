@@ -37,7 +37,8 @@ lsp_installer.on_server_ready(function(server)
 
     -- (optional) Customize the options passed to the server
     -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
+        -- opts.root_dir = function() ... end
+        -- opts.resolved_capabilities.document_formatting = false
     -- end
 
     -- This setup() function is exactly the same as lspconfig's setup function.
