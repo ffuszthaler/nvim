@@ -1,47 +1,35 @@
-function on_attach(client)
-  -- formatting
-  if client.name == 'tsserver' then
+local lsp_installer = require "nvim-lsp-installer"
+
+local function on_attach(client, bufnr)
+  -- Set up buffer-local keymaps (vim.api.nvim_buf_set_keymap()), etc.
+  if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
-
-  require("lsp_signature").on_attach()
 end
 
--- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+require("lsp_signature").on_attach()
 
--- signcollumn icons
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
-
--- Set up completion using nvim_cmp with LSP source
-local capabilities = require('cmp_nvim_lsp').update_capabilities(
-  vim.lsp.protocol.make_client_capabilities()
-)
-
--- js & ts
--- require("lspconfig").tsserver.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
---   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+-- local enhance_server_opts = {
+--   -- Provide settings that should only apply to the "eslintls" server
+--   ["eslintls"] = function(opts)
+--     opts.settings = {
+--       format = {
+--         enable = true,
+--       },
+--     }
+--   end,
 -- }
 
-local lsp_installer = require("nvim-lsp-installer")
-
--- Register a handler that will be called for all installed servers.
--- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
-    local opts = {}
+  -- Specify the default options which we'll use to setup all servers
+  local opts = {
+    on_attach = on_attach,
+  }
 
-    -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-        -- opts.root_dir = function() ... end
-        -- opts.resolved_capabilities.document_formatting = false
-    -- end
+  -- if enhance_server_opts[server.name] then
+  --   -- Enhance the default opts with the server-specific ones
+  --   enhance_server_opts[server.name](opts)
+  -- end
 
-    -- This setup() function is exactly the same as lspconfig's setup function.
-    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    server:setup(opts)
+  server:setup(opts)
 end)
