@@ -1,5 +1,12 @@
 local lsp_installer = require "nvim-lsp-installer"
 
+-- gutter icons for lsp diagnostics (should be the same as status line)
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
 local function on_attach(client, bufnr)
   -- Set up buffer-local keymaps (vim.api.nvim_buf_set_keymap()), etc.
   if client.name == "tsserver" then
