@@ -58,7 +58,7 @@ return packer.startup(function(use)
   -- colorscheme
   use "overcache/NeoSolarized"
 
-  -- treesitter
+  -- treesitter (does the same as lspsaga)
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = "require('treesitter-config')", event = "BufWinEnter" }
 
   -- better commenting
