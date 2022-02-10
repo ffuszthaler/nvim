@@ -71,7 +71,8 @@ return packer.startup(function(use)
   -- ui improvements
   use "kyazdani42/nvim-web-devicons"
   use { "lukas-reineke/indent-blankline.nvim", event = "BufRead" }
-  use { "glepnir/galaxyline.nvim", config = "require('statusline-config')", event = "BufEnter" }
+  -- use { "glepnir/galaxyline.nvim", config = "require('statusline-config')", event = "BufEnter" }
+  use { "nvim-lualine/lualine.nvim", config = "require('statusline-config')" }
   use { "akinsho/nvim-bufferline.lua", config = "require('bufferline-config')", event = "BufWinEnter" }
 
   -- random features
