@@ -1,7 +1,7 @@
 vim.o.syntax = "on" -- enable syntax highlighting
 vim.cmd "filetype plugin indent on" -- enables filetype specific settings
 vim.o.number = true -- set numbered lines
--- vim.o.relativenumber = true -- set relative number
+vim.o.relativenumber = true -- set relative number
 vim.o.clipboard = "unnamed,unnamedplus" -- copy paste between vim and everything else
 vim.o.expandtab = true -- use spaces, not tabs
 vim.o.tabstop = 2 -- number of spaces a "tab" counts for

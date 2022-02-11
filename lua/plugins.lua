@@ -83,6 +83,7 @@ return packer.startup(function(use)
   use "tweekmonster/startuptime.vim"
   use { "akinsho/nvim-toggleterm.lua", config = "require('terminal-config')", event = "BufRead" }
   use { "norcalli/nvim-colorizer.lua", config = "require('colorizer').setup()", event = "BufRead" }
+  use { 'goolord/alpha-nvim', config = "require('alpha-config')" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
