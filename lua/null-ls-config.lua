@@ -8,3 +8,7 @@ require("null-ls").setup({
     require("null-ls").builtins.completion.spell,
   },
 })
+
+-- ^N issue seems to be fixed in 0.7.0
+-- https://github.com/neovim/neovim/pull/17087
+-- might need to play with prettier settings once it has been fixed
