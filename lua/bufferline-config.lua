@@ -1,12 +1,13 @@
 require("bufferline").setup {
   options = {
     offsets = { { filetype = "NvimTree", text = "", padding = 0 } },
-    -- get rid of any extra characters
     indicator_icon = '',
     separator_style = {"", ""},
     diagnostics = "nvim_lsp",
+    diagnostics_update_in_insert = true,
     buffer_close_icon = "",
     modified_icon = "",
+    show_close_icon = false,
     close_icon = "",
     left_trunc_marker = "",
     right_trunc_marker = "",
@@ -17,5 +18,6 @@ require("bufferline").setup {
     enforce_regular_tabs = false,
     view = "multiwindow",
     show_buffer_close_icons = true,
+    always_show_bufferline = false,
   },
 }
